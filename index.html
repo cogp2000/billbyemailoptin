@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="City of Galena Park water bill email enrollment form.">
+  <title>Water Bill Email Enrollment | City of Galena Park</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to form</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <img class="city-logo" src="/assets/city-logo.png" alt="City of Galena Park official logo">
+      <div>
+        <p class="eyebrow">City of Galena Park</p>
+        <h1>Water Bill Email Enrollment</h1>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <section class="intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Receive your water bill by email</h2>
+      <p>
+        Use this form to request electronic delivery of your City of Galena Park water bill.
+        For account security, the information you provide must match the account owner currently
+        on file with the City.
+      </p>
+
+      <div class="notice" role="note">
+        <strong>Before you begin:</strong>
+        Have your utility account number and a clear copy or photo of your valid government-issued
+        photo ID ready. Your name, service address, utility account number, and identification must
+        correspond with the account owner on file.
+      </div>
+    </section>
+
+    <form
+      name="water-bill-email-enrollment"
+      method="POST"
+      action="/success.html"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      enctype="multipart/form-data"
+      class="form-card"
+      id="enrollment-form"
+    >
+      <input type="hidden" name="form-name" value="water-bill-email-enrollment">
+
+      <p class="honeypot" aria-hidden="true">
+        <label>Do not fill this out if you are human:
+          <input name="bot-field" tabindex="-1" autocomplete="off">
+        </label>
+      </p>
+
+      <section class="form-section" aria-labelledby="account-heading">
+        <div class="section-heading">
+          <span class="step">1</span>
+          <div>
+            <h2 id="account-heading">Account information</h2>
+            <p>Enter the information exactly as it appears on the utility account.</p>
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field field-full">
+            <label for="full-name">Account holder's full legal name <span aria-hidden="true">*</span></label>
+            <input id="full-name" name="account_holder_name" type="text" autocomplete="name" maxlength="120" required>
+          </div>
+
+          <div class="field field-full">
+            <label for="service-address">Water service address <span aria-hidden="true">*</span></label>
+            <input
+              id="service-address"
+              name="service_address"
+              type="text"
+              autocomplete="street-address"
+              maxlength="180"
+              placeholder="Example: 123 Main St"
+              required
+            >
+            <small>Enter the service address associated with the water account.</small>
+          </div>
+
+          <div class="field">
+            <label for="account-number">Utility account number <span aria-hidden="true">*</span></label>
+            <input
+              id="account-number"
+              name="utility_account_number"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              maxlength="40"
+              required
+            >
+            <small>Find this number on your paper water bill.</small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address for water bills <span aria-hidden="true">*</span></label>
+            <input id="email" name="billing_email" type="email" autocomplete="email" maxlength="160" required>
+          </div>
+
+          <div class="field">
+            <label for="confirm-email">Confirm email address <span aria-hidden="true">*</span></label>
+            <input id="confirm-email" name="billing_email_confirmation" type="email" autocomplete="email" maxlength="160" required>
+            <small id="email-match-message" class="validation-message" aria-live="polite"></small>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="identity-heading">
+        <div class="section-heading">
+          <span class="step">2</span>
+          <div>
+            <h2 id="identity-heading">Identity verification</h2>
+            <p>Upload one clear image or PDF of the account holder's valid government-issued photo ID.</p>
+          </div>
+        </div>
+
+        <div class="upload-box">
+          <label for="photo-id">Copy of photo ID <span aria-hidden="true">*</span></label>
+          <input
+            id="photo-id"
+            name="photo_id"
+            type="file"
+            accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"
+            required
+          >
+          <p class="file-help">
+            Accepted: JPG, JPEG, PNG, or PDF. Maximum file size for this form: 7 MB.
+            Make sure the name and identifying information are readable.
+          </p>
+          <p id="file-message" class="validation-message" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="certification-heading">
+        <div class="section-heading">
+          <span class="step">3</span>
+          <div>
+            <h2 id="certification-heading">Certification and acknowledgment</h2>
+            <p>Please review and check each statement before submitting.</p>
+          </div>
+        </div>
+
+        <div class="checkbox-group">
+          <label class="check-row">
+            <input type="checkbox" name="identity_certification" value="Yes" required>
+            <span>
+              I certify that I am the utility account holder identified above, that the information
+              I submitted is true and accurate, and that the identification uploaded with this form
+              belongs to me.
+            </span>
+          </label>
+
+          <label class="check-row">
+            <input type="checkbox" name="data_use_acknowledgment" value="Yes" required>
+            <span>
+              I authorize the City of Galena Park to use the information and identification submitted
+              through this form for the purpose of verifying my identity and account ownership and
+              administering my request for electronic water-bill delivery. I understand that records
+              may be retained, protected, or disclosed as required by applicable law.
+            </span>
+          </label>
+
+          <label class="check-row">
+            <input type="checkbox" name="verification_acknowledgment" value="Yes" required>
+            <span>
+              I understand that submitting this form does not immediately complete enrollment.
+              Electronic billing will begin only after the City verifies that the submitted information
+              matches the account owner on file.
+            </span>
+          </label>
+        </div>
+      </section>
+
+      <div class="privacy-summary">
+        <h2>Privacy notice</h2>
+        <p>
+          The City requests this information to verify the identity of the utility account holder and
+          process the request for water-bill delivery by email. The City does not request this
+          information for advertising or commercial marketing. Information submitted to a governmental
+          body may be subject to records-retention and public-information requirements, except where
+          protected from disclosure by applicable law.
+        </p>
+      </div>
+
+      <div class="submit-area">
+        <p class="required-note"><span aria-hidden="true">*</span> Required field</p>
+        <button type="submit" id="submit-button">Submit Enrollment Request</button>
+        <p class="submit-note">
+          Do not close this page until you see the confirmation screen.
+        </p>
+      </div>
+    </form>
+
+    <section class="help">
+      <h2>Need help?</h2>
+      <p>
+        If you cannot locate your utility account number or need assistance with your account,
+        contact the City of Galena Park before submitting this form.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>City of Galena Park</p>
+      <p class="footer-small">Water Utility Electronic Billing Enrollment</p>
+    </div>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
